@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/DefineSyntaxHighlighting.cs" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+noise = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+process_mode = 0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 6.34964, 35.7165 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+moveSpeed = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+texture = SubResource( 3 )
+polygon = PoolVector2Array( 16.8336, -8.92728, 12.0632, 16.0475, -16.279, 12.8204, -21.751, -10.4707, -1.82729, -23.0984, 9.39733, -17.2054 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -56.3527, 32.5417 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 92.0523, 174.902, 167.471, 134.189, 234.88, 166.559, 166.803, 202.266 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0.513726, 0.231373, 0.231373, 0.701961 )
+polygon = PoolVector2Array( 92.0523, 174.568, 166.47, 201.932, 234.88, 166.893, 235.548, 51.429, 161.13, 18.058, 88.0478, 52.0964 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = -503.731
+margin_top = -293.211
+margin_right = -135.731
+margin_bottom = -41.2109
+highlight_current_line = true
+syntax_highlighting = true
+caret_blink = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+keywords = [ "say", "shout", "whisper" ]
+col = Color( 0.192157, 0.545098, 1, 1 )
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+margin_left = 136.786
+margin_top = -294.005
+margin_right = 504.786
+margin_bottom = -42.0046
+highlight_current_line = true
+syntax_highlighting = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
