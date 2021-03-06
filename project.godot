@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Isometric- Mmo- Sketch"
+run/main_scene="res://Scenes/Sample Scene.tscn"
 config/icon="res://icon.png"
 
 [display]
